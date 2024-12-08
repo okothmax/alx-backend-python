@@ -9,7 +9,7 @@ def with_db_connection(func):
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         # Open the database connection
-        conn = sqlite3.connect("users.db")  # Replace 'users.db' with your database file
+        conn = sqlite3.connect("users.db")  
         try:
             # Pass the connection to the wrapped function
             return func(conn, *args, **kwargs)
